@@ -39,3 +39,17 @@ else
         echo
         exit 1
 fi
+final_touch() {
+pip3 > /dev/null 2>&1
+pro=$(echo $?)
+if [[ ${pro} == "1"  ]]; then
+        clear
+	echo "Error occured. Please run this $0 again"
+elif [[ ${pro} == "0" ]]; then
+        clear
+	echo
+	echo "Successfully fixed pip3."
+	echo
+fi
+}
+final_touch
